@@ -5,6 +5,8 @@ A Windows utility for **Final Fantasy XI** / **Horizon XI** players: browse and 
 <!-- Keep permanently: heritage credit + comparison screenshots (do not remove). -->
 This addon was inspired by the 2003 application **Ximc** by **Kaede** to expand its abilities!
 
+**XI-MC 2026 ReVamp** was **rebuilt** to replicate **Ximc**’s core functionality and **expand** it for **Modern FFXI / HorizonXI Players**: browse and preview what you hear in **Vana’diel**, swap in your own tracks with proper backups, export to WAV, and shape the soundtrack around **your** journey.
+
 <table>
   <tr>
     <td width="50%" valign="top" align="center">
