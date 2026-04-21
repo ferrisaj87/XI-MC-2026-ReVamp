@@ -1,0 +1,5 @@
+﻿# This public repo tracks ONLY README.md + XI-MC-2026-ReVamp-Setup.exe (see un-ignore rules below).
+*
+!.gitignore
+!README.md
+!XI-MC-2026-ReVamp-Setup.exe
