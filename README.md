@@ -12,32 +12,28 @@ The first-time wizard explains what the program does, what gets installed, and a
 <!-- RELEASE_NOTES_START -->
 ### Changes in v1.2.35
 
-- **Workflow change:** Ship with **manual** **`1 - REBUILD APP`** → **`2 - Build Installer`** → **`3 - Publish Public Release`** (no chained “run all three” batch). Step **3** normalizes **README.md** (UTF-8, no BOM), copies **`installer_output\XI-MC-2026-ReVamp-Setup-<version>.exe`** to the repo-root **`.exe`**, commits with subject **Release v…** (version from Inno **`MyAppVersion`**) and **this entire block** as the commit body, pushes, and creates/updates the **GitHub Release** — no manual file copies.
-- **Catch-up:** The last **GitHub** release with full notes was **v1.2.25**. **v1.2.35** ships the installer plus **everything listed below** from **v1.2.26** through **v1.2.35**.
-- **Going forward:** Bump **`#define MyAppVersion`** in **`installer\XI-MC-2026-ReVamp.iss`** by **0.01**, match this README (download line + notes) and **`MusicMaker.py`**, then run **1 → 2 → 3**.
+- **Workflow updates:** Release packaging and download page only (no change to app behavior).
 
 ### Changes in v1.2.34
 
-- **MyMusic removed:** No scanning or logic under `polplugins\DATs\MyMusic\ROM`. Workflow is **horizonmusic** (or retail) pack paths plus `…\music\data\Backup\`, and **AppData** `custom_stash` + manifest for convert/reapply.
-- **Auto-Detect preview:** `custom_stash` → Horizon pack → retail (no MyMusic).
-- **Custom column (C):** Manifest + pack edits, including **R\*** from `.retail` markers next to pack `.bgw` under horizonmusic and retail.
+- **Paths & scanning:** The app no longer looks at the legacy MyMusic ROM folder. Browsing, preview, and writes use Horizon pack paths, retail, local backups, and your customs saved under AppData.
+- **Preview (Auto-Detect):** Uses your saved customs first, then the Horizon pack, then retail.
+- **Track list:** Retail overrides and custom edits (including markers next to pack files) show correctly in the list columns.
 
 ### Changes in v1.2.26 through v1.2.33
 
-- **v1.2.33:** **R\*** after restart for pack-only retail overrides (no MyMusic manifest); **122/135** and **122/162** `.retail` keys mirrored to folder **123** for Kazham / Heaven's Tower dedupe.
-- **v1.2.32:** **Use Retail Version Here:** restore **R\*** by scanning `.retail` next to pack `.bgw` under horizonmusic and retail.
-- **v1.2.31:** Track list **Files:** filter (All / Retail Only / HXI Only / Custom Only) from R H C; saved as `avail_filter` in `ximc_config.json`.
-- **v1.2.30:** **Heaven's Tower (162):** same **122/123** + **sound/sound2** pairing as Kazham (135); single list row **123/162**; `tracks.csv` uses one **123/162** row.
-- **v1.2.29:** **HorizonXI** / **Retail Original** preview uses `Backup\` when it differs from live (no separate Backup source in the UI); **Horizon Override** renamed to **HorizonXI**.
-- **v1.2.28:** Auto-Detect order evolved (superseded by v1.2.34 stash-first behavior).
-- **v1.2.27:** Optional explicit backup sources (superseded by v1.2.29 automatic backup preview).
-- **v1.2.26:** If a fixed Source has no file, fall back to Auto-Detect order and update the dropdown instead of erroring.
+- **v1.2.33:** Retail override indicators stay correct after restart when you only changed pack files; Kazham and Heaven's Tower stay as single, merged rows in the list.
+- **v1.2.32:** **Use Retail Version Here** correctly restores override markers after restart by finding sidecar files next to pack music.
+- **v1.2.31:** **Files** filter on the track list (all tracks vs retail-only vs HXI-only vs your customs); your choice is remembered.
+- **v1.2.30:** Heaven's Tower uses the same list and preview rules as Kazham (one merged row, correct behavior across sound folders).
+- **v1.2.29:** Preview can pull from your **Backup** copy when that’s still the original stock file; the Horizon option is labeled **HorizonXI** for clarity.
+- **v1.2.28–v1.2.26:** **Auto-Detect** and preview behave better when a chosen source file is missing (smarter fallbacks, fewer errors).
 
 ### Changes in v1.2.25
 
-- **Kazham:** When both `sound/135` and `sound2/135` exist, the track list shows one row (folder 123) with merged R/H/C; preview paths search the right pack order for Horizon vs retail.
-- **Yuhtunga Jungle:** Stray `sound/134` (122/134) on disk is ignored so it does not duplicate **123/134** (Yuhtunga is sound2 only in the list).
-- **Track names:** HXI slots **617** (Delkfutt's Tower) and **623** (Quicksand Caves) use proper names in `tracks.csv`.
+- **Kazham:** One merged row when the game has both sound folders; preview follows the right order for Horizon vs retail.
+- **Yuhtunga Jungle:** Stray duplicate entries on disk no longer show up as an extra row.
+- **Track names:** Delkfutt's Tower and Quicksand Caves show correct names in the list.
 
 <!-- RELEASE_NOTES_END -->
 
@@ -53,6 +49,6 @@ Final Fantasy XI is a trademark of Square Enix Co., Ltd. This project does not d
 
 ## Repository
 
-This public repository contains **only** this README and the current Windows installer. It does not include source code, batch files, or the app source tree — those stay on the maintainer’s machine.
+This public repository contains **only** this README and the current Windows installer (no full source tree here).
 
 Repository: **https://github.com/ferrisaj87/XI-MC-2026-ReVamp**
