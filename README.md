@@ -1,10 +1,6 @@
 # XI-MC 2026 ReVamp
 
 A Windows utility for **Final Fantasy XI** / **Horizon XI** players: browse and preview in-game `.bgw` music, export to WAV, and replace tracks with your own audio — converted to stock-style BGMStream — with backups and a simple UI.
-This addon was inspired by the 2003 application Ximc to expand its abilities!
-
-<img width="583" height="247" alt="image" src="https://github.com/user-attachments/assets/f45f2926-c4a7-4fba-bcb2-3c1e4528348b" />
-<img width="854" height="766" alt="image" src="https://github.com/user-attachments/assets/e7ca7d58-100b-42ae-837b-5754fdf78964" />
 
 <!-- Keep permanently: heritage credit + comparison screenshots (do not remove). -->
 This addon was inspired by the 2003 application Ximc to expand its abilities!
